@@ -14,7 +14,7 @@ public class LibraryManagementSystem {
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // 숫자 입력 후 남은 개행문자 제거
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -43,10 +43,10 @@ public class LibraryManagementSystem {
         System.out.print("Enter phone number: ");
         String phoneNum = scanner.nextLine().replace("-", "").replace(" ", "");
 
-        // Factory Method를 사용하여 새 사용자 생성
+        // Using Factory Method generate new user
         User newUser = UserFactory.createUser(userType, userName, phoneNum);
 
-        // Singleton DatabaseConnection 인스턴스를 사용하여 사용자 추가
+        // Using Singleton DatabaseConnection instance generate new user
         dbConnection.addUser(newUser);
 
         System.out.println("User successfully registered:");
@@ -60,7 +60,6 @@ public class LibraryManagementSystem {
         System.out.print("Enter phone number: ");
         String phoneNum = scanner.nextLine().replace("-", "").replace(" ", "");
 
-        // 데이터베이스에서 사용자 검색
         User user = dbConnection.getUser(userName);
 
         if (user != null && user.getPhoneNum().equals(phoneNum)) {
@@ -79,7 +78,7 @@ public class LibraryManagementSystem {
             System.out.println("4. Logout");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // 숫자 입력 후 남은 개행문자 제거
+            scanner.nextLine(); 
     
             switch (choice) {
                 case 1:

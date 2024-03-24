@@ -3,8 +3,6 @@ package library;
 import java.util.HashMap;
 import java.util.Map;
 
-import User;
-
 public class DatabaseConnection {
   private static DatabaseConnection instance;
   private Map<String, User> users;
