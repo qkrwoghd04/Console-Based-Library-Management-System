@@ -44,8 +44,11 @@ class Faculty extends User{
   }
 }
 
-//Factory pattern
+// The UserFactory class implements the Factory Design Pattern.
+// It provides a static method to create objects of User subclasses (Student or Faculty) based on the type parameter.
 class UserFactory{
+  // This static method creates and returns User objects.
+  // The type of User object (Student or Faculty) depends on the type argument.
   public static User createUser(String type, String name, String phoneNum){
     switch(type.toLowerCase()){
       case "student":

@@ -4,23 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// The Book class implements the Subject interface, making it observable by observers.
+// It represents a book that can notify observers about its availability changes.
 public class Book implements Subject {
-    private List<Observer> observers = new ArrayList<>();
+    private List<Observer> observers = new ArrayList<>(); // Holds references to observers.
     private String title;
-    private String author; // 저자 정보 추가
-    private String publicationDate; // 출판일 정보 추가
-    private String isbn; // ISBN 정보 추가
+    private String author; 
+    private String publicationDate; 
+    private String isbn; 
     private boolean isAvailable;
     
 
 
-    // 생성자에 저자, 출판일, ISBN 파라미터 추가
+    
     public Book(String title, String author, String publicationDate, String isbn) {
         this.title = title;
         this.author = author;
         this.publicationDate = publicationDate;
         this.isbn = isbn;
-        this.isAvailable = true; // 초기 상태는 대출 가능으로 가정
+        this.isAvailable = true; 
     }
 
     @Override
@@ -45,7 +47,7 @@ public class Book implements Subject {
         notifyObservers();
     }
 
-    // 책 정보를 출력하는 메서드에 저자, 출판일, ISBN 정보 출력 추가
+    
     public void displayInfo() {
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);

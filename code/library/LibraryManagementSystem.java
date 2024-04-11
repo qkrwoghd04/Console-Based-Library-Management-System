@@ -66,14 +66,13 @@ public class LibraryManagementSystem {
         if (user != null && user.getPhoneNum().equals(phoneNum)) {
             System.out.println("Login successful:");
             user.displayInfo();
-            manageBooks(scanner, dbConnection, user); // 로그인한 사용자 객체를 함께 전달
+            manageBooks(scanner, dbConnection, user); 
         } else {
             System.out.println("Login failed: User not found or phone number does not match.");
         }
     }
 
     private static void manageBooks(Scanner scanner, DatabaseConnection dbConnection, User user) {
-        // 사용자가 교직원(Faculty)일 때만 책 관리 메뉴를 보여줍니다.
         if (user instanceof Faculty) {
             while (true) {
                 System.out.println("\n1. Add Book");
@@ -107,7 +106,6 @@ public class LibraryManagementSystem {
     }
 
     private static void manageStudentActions(Scanner scanner, DatabaseConnection dbConnection, User user) {
-        // 학생(Student)이 수행할 수 있는 동작을 보여주는 메뉴
         while (true) {
             System.out.println("\n1. Borrow Book");
             System.out.println("2. Return Book");
@@ -119,15 +117,12 @@ public class LibraryManagementSystem {
 
             switch (choice) {
                 case 1:
-                    // 학생이 책을 빌리는 기능을 구현
                     borrowBook(scanner, dbConnection, user);
                     break;
                 case 2:
-                    // 학생이 책을 반납하는 기능을 구현
                     returnBook(scanner, dbConnection, user);
                     break;
                 case 3:
-                    // 학생이 빌린 책을 보는 기능을 구현
                     viewBorrowedBooks(dbConnection, user);
                     break;
                 case 4:
@@ -146,12 +141,12 @@ public class LibraryManagementSystem {
         String author = scanner.nextLine();
         System.out.print("Enter publication date: ");
         String publicationDate = scanner.nextLine();
-        System.out.print("Enter ISBN: "); // ISBN 입력 받기
+        System.out.print("Enter ISBN: "); 
         String isbn = scanner.nextLine();
 
-        // ISBN 정보를 포함하여 새로운 Book 객체 생성
+        
         Book book = new Book(title, author, publicationDate, isbn);
-        dbConnection.addBook(book); // 생성된 Book 객체를 데이터베이스에 추가
+        dbConnection.addBook(book);
 
         System.out.println("Book added successfully.");
     }
@@ -167,7 +162,6 @@ public class LibraryManagementSystem {
         }
     }
 
-    // LibraryManagementSystem 클래스 내 추가
     private static void borrowBook(Scanner scanner, DatabaseConnection dbConnection, User user) {
         System.out.print("Enter book title to borrow: ");
         String title = scanner.nextLine();
