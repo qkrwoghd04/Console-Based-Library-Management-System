@@ -1,6 +1,7 @@
 package library;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class LibraryManagementSystem {
     public static void main(String[] args) {
@@ -56,12 +57,12 @@ public class LibraryManagementSystem {
     private static void loginUser(Scanner scanner, DatabaseConnection dbConnection) {
         System.out.print("Enter user name for login: ");
         String userName = scanner.nextLine();
-    
+
         System.out.print("Enter phone number: ");
         String phoneNum = scanner.nextLine().replace("-", "").replace(" ", "");
-    
+
         User user = dbConnection.getUser(userName);
-    
+
         if (user != null && user.getPhoneNum().equals(phoneNum)) {
             System.out.println("Login successful:");
             user.displayInfo();
@@ -70,7 +71,7 @@ public class LibraryManagementSystem {
             System.out.println("Login failed: User not found or phone number does not match.");
         }
     }
-    
+
     private static void manageBooks(Scanner scanner, DatabaseConnection dbConnection, User user) {
         // 사용자가 교직원(Faculty)일 때만 책 관리 메뉴를 보여줍니다.
         if (user instanceof Faculty) {
@@ -166,17 +167,37 @@ public class LibraryManagementSystem {
         }
     }
 
-    // borrowBook, returnBook, viewBorrowedBooks 메서드는 구현 필요
-    // 예시를 위한 가상의 구현입니다.
+    // LibraryManagementSystem 클래스 내 추가
     private static void borrowBook(Scanner scanner, DatabaseConnection dbConnection, User user) {
-        // 학생이 책을 빌리는 로직 구현
+        System.out.print("Enter book title to borrow: ");
+        String title = scanner.nextLine();
+        if (dbConnection.borrowBook(title, user.getName())) {
+            System.out.println(title + " has been borrowed successfully.");
+        } else {
+            System.out.println("Failed to borrow " + title + ".");
+        }
     }
 
     private static void returnBook(Scanner scanner, DatabaseConnection dbConnection, User user) {
-        // 학생이 책을 반납하는 로직 구현
+        System.out.print("Enter book title to return: ");
+        String title = scanner.nextLine();
+        if (dbConnection.returnBook(title, user.getName())) {
+            System.out.println(title + " has been returned successfully.");
+        } else {
+            System.out.println("Failed to return " + title + ".");
+        }
     }
 
     private static void viewBorrowedBooks(DatabaseConnection dbConnection, User user) {
-        // 학생이 빌린 책 목록을 보는 로직 구현
+        List<BookDecorator> borrowedBooks = dbConnection.getBorrowedBooks(user.getName());
+        if (borrowedBooks.isEmpty()) {
+            System.out.println("You have not borrowed any books.");
+        } else {
+            System.out.println("Borrowed Books:");
+            for (BookDecorator bookDecorator : borrowedBooks) {
+                bookDecorator.displayInfo();
+            }
+        }
     }
+
 }

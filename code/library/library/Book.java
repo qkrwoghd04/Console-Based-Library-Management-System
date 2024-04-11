@@ -3,6 +3,7 @@ package library;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Book implements Subject {
     private List<Observer> observers = new ArrayList<>();
     private String title;
@@ -10,6 +11,8 @@ public class Book implements Subject {
     private String publicationDate; // 출판일 정보 추가
     private String isbn; // ISBN 정보 추가
     private boolean isAvailable;
+    
+
 
     // 생성자에 저자, 출판일, ISBN 파라미터 추가
     public Book(String title, String author, String publicationDate, String isbn) {
@@ -81,6 +84,9 @@ public class Book implements Subject {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
 }
