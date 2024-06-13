@@ -1,4 +1,4 @@
-package Exercise.Behavior_State_MP3;
+package DesignPatterns.Behavioral_State_MP3;
 
 public class Client {
   public static void main(String[] args) {

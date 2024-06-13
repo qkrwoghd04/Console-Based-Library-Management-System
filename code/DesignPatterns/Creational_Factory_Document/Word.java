@@ -1,4 +1,4 @@
-package Exercise.FactoryPracticeDocument;
+package DesignPatterns.Creational_Factory_Document;
 
 public class Word implements Document{
   String name;

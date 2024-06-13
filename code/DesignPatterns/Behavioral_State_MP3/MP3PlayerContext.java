@@ -1,4 +1,4 @@
-package Exercise.Behavior_State_MP3;
+package DesignPatterns.Behavioral_State_MP3;
 
 public class MP3PlayerContext {
   MP3State mp3State;

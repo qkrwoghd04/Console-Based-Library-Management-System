@@ -1,4 +1,4 @@
-package library;
+package LibrarySystem_Using_DesignPatterns;
 
 // The Subject interface declares a set of methods for managing observers.
 // It allows subjects to register, remove, and notify observers about the state changes.

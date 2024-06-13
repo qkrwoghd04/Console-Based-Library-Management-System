@@ -1,4 +1,4 @@
-package Exercise.DecoratorCafe;
+package DesignPatterns.Structural_Decorator_Cafe;
 
 public abstract class CoffeeDecorator implements Coffee{
   private Coffee coffee;

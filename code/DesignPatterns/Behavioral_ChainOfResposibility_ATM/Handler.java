@@ -1,4 +1,4 @@
-package Exercise.ChainOfResposibility_ATM;
+package DesignPatterns.Behavioral_ChainOfResposibility_ATM;
 
 public interface Handler {
   public Handler setNextHandler(Handler handler);

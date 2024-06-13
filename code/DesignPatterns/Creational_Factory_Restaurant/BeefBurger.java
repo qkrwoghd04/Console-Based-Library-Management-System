@@ -1,4 +1,4 @@
-package Exercise.FactoryPracticeRestaurant;
+package DesignPatterns.Creational_Factory_Restaurant;
 
 public class BeefBurger implements Burger{
   String name;

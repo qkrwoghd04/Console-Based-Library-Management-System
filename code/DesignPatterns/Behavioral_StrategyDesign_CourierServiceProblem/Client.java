@@ -1,4 +1,4 @@
-package Exercise.Behavior_StrategyDesign_CourierServiceProblem;
+package DesignPatterns.Behavioral_StrategyDesign_CourierServiceProblem;
 
 public class Client {
   public static void main(String[] args) {

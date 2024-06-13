@@ -1,4 +1,4 @@
-package Exercise.BuilderPracticeCar;
+package DesignPatterns.Creational_Builder_Car;
 
 public class CarBuilder implements Builder{
   private Car car;

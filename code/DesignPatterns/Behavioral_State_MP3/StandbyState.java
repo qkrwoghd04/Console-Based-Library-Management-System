@@ -1,4 +1,4 @@
-package Exercise.Behavior_State_MP3;
+package DesignPatterns.Behavioral_State_MP3;
 
 public class StandbyState implements MP3State{
   public void pressPlay(MP3PlayerContext context){

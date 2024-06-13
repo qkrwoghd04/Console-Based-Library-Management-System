@@ -1,4 +1,4 @@
-package Exercise.StrategyDesign_Ecommerce;
+package DesignPatterns.Behavioral_Strategy_Ecommerce;
 
 public class Client {
   public static void main(String[] args) {

@@ -1,8 +1,5 @@
-package Exercise.sales;
+package DesignPatterns.sales;
 
-/**
- * IMessageService
- */
 public interface IMessageService {
   void send(String message);
 }

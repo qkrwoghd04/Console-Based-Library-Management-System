@@ -1,4 +1,4 @@
-package Exercise.DecoratorRobot;
+package DesignPatterns.Structural_Decorator_Robot;
 
 public class KoreanRobot implements Robot{
   @Override

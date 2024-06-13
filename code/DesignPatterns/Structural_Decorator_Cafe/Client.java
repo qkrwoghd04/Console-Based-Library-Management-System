@@ -1,4 +1,4 @@
-package Exercise.DecoratorCafe;
+package DesignPatterns.Structural_Decorator_Cafe;
 
 public class Client {
   public static void main(String[] args) {

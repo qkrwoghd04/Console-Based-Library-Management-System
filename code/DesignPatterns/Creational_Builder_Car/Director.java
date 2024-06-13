@@ -1,4 +1,4 @@
-package Exercise.BuilderPracticeCar;
+package DesignPatterns.Creational_Builder_Car;
 
 public class Director {
   public void constructSportsCar(Builder builder){

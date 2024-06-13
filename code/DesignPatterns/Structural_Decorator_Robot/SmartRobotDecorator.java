@@ -1,4 +1,4 @@
-package Exercise.DecoratorRobot;
+package DesignPatterns.Structural_Decorator_Robot;
 
 public class SmartRobotDecorator extends RobotDecorator{
   private boolean smart;

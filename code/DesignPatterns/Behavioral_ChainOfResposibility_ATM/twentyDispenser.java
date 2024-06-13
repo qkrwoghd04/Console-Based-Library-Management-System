@@ -1,4 +1,4 @@
-package Exercise.ChainOfResposibility_ATM;
+package DesignPatterns.Behavioral_ChainOfResposibility_ATM;
 
 public class twentyDispenser implements Handler {
   private Handler next;

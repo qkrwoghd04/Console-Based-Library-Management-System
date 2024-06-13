@@ -1,4 +1,4 @@
-package Exercise.sales;
+package DesignPatterns.sales;
 
 public class Email implements IMessageService{
   @Override

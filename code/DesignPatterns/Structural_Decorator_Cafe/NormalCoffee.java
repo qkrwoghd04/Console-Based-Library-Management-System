@@ -1,4 +1,4 @@
-package Exercise.DecoratorCafe;
+package DesignPatterns.Structural_Decorator_Cafe;
 
 public class NormalCoffee implements Coffee{
 
